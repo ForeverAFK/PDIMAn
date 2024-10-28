@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://nr45bwlpruyx"]
+
+[ext_resource type="PackedScene" uid="uid://b3yumxple4usq" path="res://Screens/TaskTemplateNode.tscn" id="1_8a2fh"]
+[ext_resource type="Script" path="res://Scripts/TaskArea.gd" id="2_dweep"]
+
+[node name="TaskTest" instance=ExtResource("1_8a2fh")]
+
+[node name="LabelSampleText" parent="ContainerUpperBar/UpperBar" index="0"]
+text = "Lesson
+"
+
+[node name="MessageTask" parent="WorkField" index="0"]
+text = "Task text goes here"
+
+[node name="TaskArea" parent="WorkField" index="1"]
+script = ExtResource("2_dweep")
+
+[node name="Button1" type="Button" parent="WorkField/TaskArea" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="WorkField/TaskArea" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="WorkField/TaskArea" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="WorkField/TaskArea" index="3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LogBox" type="RichTextLabel" parent="ContainerLowerBar" index="0"]
+layout_mode = 2
+
+[connection signal="pressed" from="WorkField/TaskArea/Button1" to="WorkField/TaskArea" method="_on_button_1_pressed"]
+[connection signal="pressed" from="WorkField/TaskArea/Button2" to="WorkField/TaskArea" method="_on_button_2_pressed"]
+[connection signal="pressed" from="WorkField/TaskArea/Button3" to="WorkField/TaskArea" method="_on_button_3_pressed"]
+[connection signal="pressed" from="WorkField/TaskArea/Button4" to="WorkField/TaskArea" method="_on_button_4_pressed"]

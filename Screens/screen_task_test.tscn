@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://nr45bwlpruyx"]
+
+[ext_resource type="PackedScene" uid="uid://b3yumxple4usq" path="res://Screens/TaskTemplateNode.tscn" id="1_8a2fh"]
+[ext_resource type="Script" path="res://Scripts/TaskArea.gd" id="2_dweep"]
+
+[node name="TaskTest" instance=ExtResource("1_8a2fh")]
+
+[node name="LabelSampleText" parent="ContainerUpperBar/UpperBar" index="0"]
+text = "Lesson | Score
+"
+
+[node name="MessageTask" parent="WorkField" index="0"]
+bbcode_enabled = true
+text = "Task text goes here"
+
+[node name="TaskArea" parent="WorkField" index="1"]
+script = ExtResource("2_dweep")
+
+[node name="Button1" type="Button" parent="WorkField/TaskArea" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelButton" type="RichTextLabel" parent="WorkField/TaskArea/Button1" index="0"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+
+[node name="Button2" type="Button" parent="WorkField/TaskArea" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelButton" type="RichTextLabel" parent="WorkField/TaskArea/Button2" index="0"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+
+[node name="Button3" type="Button" parent="WorkField/TaskArea" index="2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelButton" type="RichTextLabel" parent="WorkField/TaskArea/Button3" index="0"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+
+[node name="Button4" type="Button" parent="WorkField/TaskArea" index="3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelButton" type="RichTextLabel" parent="WorkField/TaskArea/Button4" index="0"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+bbcode_enabled = true
+fit_content = true
+
+[node name="LogBox" type="RichTextLabel" parent="ContainerLowerBar" index="0"]
+layout_mode = 2
+
+[node name="ContainerFinale" type="PanelContainer" parent="." index="4"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -97.5
+offset_right = 141.5
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GratsField" type="VBoxContainer" parent="ContainerFinale" index="0"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LabelFinale" type="Label" parent="ContainerFinale/GratsField" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Label Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinaleMessage" type="Label" parent="ContainerFinale/GratsField" index="1"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Очков набрано: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="WorkField/TaskArea/Button1" to="WorkField/TaskArea" method="_on_button_1_pressed"]
+[connection signal="pressed" from="WorkField/TaskArea/Button2" to="WorkField/TaskArea" method="_on_button_2_pressed"]
+[connection signal="pressed" from="WorkField/TaskArea/Button3" to="WorkField/TaskArea" method="_on_button_3_pressed"]
+[connection signal="pressed" from="WorkField/TaskArea/Button4" to="WorkField/TaskArea" method="_on_button_4_pressed"]

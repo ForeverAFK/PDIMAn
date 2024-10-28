@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcba3v7w5ii25"]
+
+[ext_resource type="PackedScene" uid="uid://cw5ferx1lu5me" path="res://Screens/MainNode.tscn" id="1_yxkdr"]
+[ext_resource type="Script" path="res://Scripts/choose_exercise_messages.gd" id="2_tdtyx"]
+
+[node name="ScreenChoosingExercise" instance=ExtResource("1_yxkdr")]
+
+[node name="LabelSampleText" parent="ContainerUpperBar/UpperBar" index="0"]
+text = "So what are we doing today?"
+
+[node name="WorkField" parent="." index="1"]
+offset_left = 14.0
+offset_top = 34.0
+offset_right = 1139.0
+
+[node name="ButtonTheory" type="Button" parent="WorkField" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Theory"
+
+[node name="ButtonTheoryPract" type="Button" parent="WorkField" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Theory Practice"
+
+[node name="ButtonExercise" type="Button" parent="WorkField" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Example
+Exercises"
+
+[node name="MessagesExercise" type="RichTextLabel" parent="ContainerLowerBar" index="0"]
+layout_mode = 2
+script = ExtResource("2_tdtyx")
+
+[connection signal="mouse_entered" from="WorkField/ButtonTheory" to="ContainerLowerBar/MessagesExercise" method="_on_button_theory_mouse_entered"]
+[connection signal="mouse_exited" from="WorkField/ButtonTheory" to="ContainerLowerBar/MessagesExercise" method="_on_button_theory_mouse_exited"]
+[connection signal="mouse_entered" from="WorkField/ButtonTheoryPract" to="ContainerLowerBar/MessagesExercise" method="_on_button_theory_pract_mouse_entered"]
+[connection signal="mouse_exited" from="WorkField/ButtonTheoryPract" to="ContainerLowerBar/MessagesExercise" method="_on_button_theory_pract_mouse_exited"]
+[connection signal="mouse_entered" from="WorkField/ButtonExercise" to="ContainerLowerBar/MessagesExercise" method="_on_button_exercise_mouse_entered"]
+[connection signal="mouse_exited" from="WorkField/ButtonExercise" to="ContainerLowerBar/MessagesExercise" method="_on_button_exercise_mouse_exited"]
